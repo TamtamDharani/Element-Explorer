@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Explorer</title>
+    <!---<link rel="stylesheet" href="style.css"> --->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #007BFF; /* Blue background for the body */
+            margin: 0;
+            padding: 20px;
+            color: white; /* Change text color to white for better contrast */
+        }
+        h1 {
+            color: #FFD700; /* Gold color for the heading */
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        .info {
+            background-color: #FFA500; /* Orange background for the info section */
+            padding: 20px;
+            border-radius: 5px;
+            color: #333; /* Change text color to dark for better readability */
+            font-size: 16px;
+            max-width: 80%;
+            margin: 0 auto 20px; /* Center the info and add margin below */
+            text-align: left; /* Align text to the left */
+        }
+        .button-container {
+            margin: 20px 0; /* Add margin above and below the button container */
+        }
+        .button {
+            background-color: #FFD700; /* Gold color for buttons */
+            color: #333; /* Dark text color */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .sub-button-container {
+            display: none; /* Initially hide the sub-buttons */
+            margin-top: 10px;
+        }
+        table {
+            width: 60%; /* Decrease the width of the table */
+            border-collapse: collapse;
+            margin: 20px auto; /* Center the table */
+            background-color: #87CEEB; /* Sky blue background for the table */
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #ddd;
+        }
+        tr:hover {
+            background-color: #f0f0f0; /* Change background color on hover */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+    </style>
+    <script>
+        function toggleSubButtons() {
+            const subButtons = document.getElementById('sub-buttons');
+            if (subButtons.style.display === 'none' || subButtons.style.display === '') {
+                subButtons.style.display = 'block'; // Show the sub-buttons
+            } else {
+                subButtons.style.display = 'none'; // Hide the sub-buttons
+            }
+        }
+
+        function openElementInfo(url) {
+            window.open(url, '_blank'); // Opens the link in a new tab
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to Element Explorer</h1>
+    <p>Explore the elements of the periodic table!</p>
+
+    <div class="button-container">
+        <button class="button" onclick="toggleSubButtons()">Metals</button>
+        <button class="button">Metalloids</button>
+        <button class="button">Nonmetals</button>
+        <button class="button">States</button>
+        <button class="button">Groups</button>
+        <button class="button">Periods</button>
+    </div>
+    
+    <div class="sub-button-container" id="sub-buttons">
+        <button class="button">Alkali Metals</button>
+        <button class="button">Alkaline Earth Metals</button>
+        <button class="button">Transition Metals</button>
+        <button class="button">Post-Transition Metals</button>
+        <button class="button">Lanthanides</button>
+        <button class="button">Actinides</button>
+    </div>
+    
+    <div class="info">
+        <p>The periodic table of the elements was first introduced in the mid-19th century by Dmitry Mendeleev. He organized the elements by atomic number, which is equal to the number of protons found in the nucleus of the element’s atoms.</p>
+        <p>The Fisher Scientific Interactive Period Table of Elements is a 21st-century version of Mendeleev’s ingenious creation. Its interactive features allow you to easily view the atomic number along with other important properties of all 118 elements by clicking on the periodic chart.</p>
+    </div>
+    
+    <img src="https://pubchem.ncbi.nlm.nih.gov/periodic-table/Periodic_Table.png" alt="Periodic Table">
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Element Name</th>
+                <th>Symbol</th>
+                <th>Atomic Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr onclick="openElementInfo('https://www.eia.gov/energyexplained/hydrogen/#:~:text=Hydrogen%20is%20the%20simplest%20element&text=Hydrogen%20occurs%20naturally%20on%20earth,gas%2C%20coal%2C%20and%20petroleum.')">
+                <td>Hydrogen</td><td>H</td><td>1</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Helium')">
+                <td>Helium</td><td>He</td><td>2</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Lithium')">
+                <td>Lithium</td><td>Li</td><td>3</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Beryllium')">
+                <td>Beryllium</td><td>Be</td><td>4</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Boron')">
+                <td>Boron</td><td>B</td><td>5</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Carbon')">
+                <td>Carbon</td><td>C</td><td>6</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Nitrogen')">
+                <td>Nitrogen</td><td>N</td><td>7</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Oxygen')">
+                <td>Oxygen</td><td>O</td><td>8</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Fluorine')">
+                <td>Fluorine</td><td>F</td><td>9</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Neon')">
+                <td>Neon</td><td>Ne</td><td>10</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Sodium')">
+                <td>Sodium</td><td>Na</td><td>11</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Magnesium')">
+                <td>Magnesium</td><td>Mg</td><td>12</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Aluminium')">
+                <td>Aluminum</td><td>Al</td><td>13</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Sulfur')">
+                <td>Sulfur</td><td>s</td><td>16</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Chlorine')">
+                <td>Chlorine</td><td>cl</td><td>17</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Argon')">
+                <td>Argon</td><td>Ar</td><td>18</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Potassium')">
+                <td>Potassium</td><td>K</td><td>19</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Calcium')">
+                <td>Calcium</td><td>Ca</td><td>20</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Scandium')">
+                <td>Scandium</td><td>Sc</td><td>21</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Titanium')">
+                <td>Titanium</td><td>Ti</td><td>22</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Vanadium')">
+                <td>Vanadium</td><td>V</td><td>23</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Chromium')">
+                <td>Chromium</td><td>Cr</td><td>24</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Manganese')">
+                <td>Manganese</td><td>Mn</td><td>25</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Iron')">
+                <td>Iron</td><td>Fe</td><td>26</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Cobalt')">
+                <td>Cobalt</td><td>Co</td><td>27</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Nickel')">
+                <td>Nickel</td><td>Ni</td><td>28</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Copper')">
+                <td>Copper</td><td>Cu</td><td>29</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Zinc')">
+                <td>Zinc</td><td>Zn</td><td>30</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Gallium')">
+                <td>Gallium</td><td>Ga</td><td>31</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Germanium')">
+                <td>Germanium</td><td>Ge</td><td>32</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Arsenic')">
+                <td>Arsenic</td><td>As</td><td>33</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Selenium')">
+                <td>Selenium</td><td>Se</td><td>34</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Bromine')">
+                <td>Bromine</td><td>Br</td><td>35</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Krypton')">
+                <td>Krypton</td><td>Kr</td><td>36</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Rubidium')">
+                <td>Rubidium</td><td>Rb</td><td>37</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Strontium')">
+                <td>Strontium</td><td>Sr</td><td>38</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Yttrium')">
+                <td>Yttrium</td><td>Y</td><td>39</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Zirconium')">
+                <td>Zirconium</td><td>Zr</td><td>40</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Niobium')">
+                <td>Niobium</td><td>Nb</td><td>41</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Molybdenum')">
+                <td>Molybdenum</td><td>Mo</td><td>42</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Technetium')">
+                <td>Technetium</td><td>Tc</td><td>43</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Ruthenium')">
+                <td>Ruthenium</td><td>Ru</td><td>44</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Rhodium')">
+                <td>Rhodium</td><td>Rh</td><td>45</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Palladium')">
+                <td>Palladium</td><td>Pd</td><td>46</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Silver')">
+                <td>Silver</td><td>Ag</td><td>47</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Cadmium')">
+                <td>Cadmium</td><td>Cd</td><td>48</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Indium')">
+                <td>Indium</td><td>In</td><td>49</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Tin')">
+                <td>Tin</td><td>Sn</td><td>50</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Lead')">
+                <td>Lead</td><td>Pb</td><td>82</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Uranium')">
+                <td>Uranium</td><td>U</td><td>92</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Plutonium')">
+                <td>Plutonium</td><td>Pu</td><td>94</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Curium')">
+                <td>Curium</td><td>Cm</td><td>96</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Berkelium')">
+                <td>Berkelium</td><td>Bk</td><td>97</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Californium')">
+                <td>Californium</td><td>Cf</td><td>98</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Einsteinium')">
+                <td>Einsteinium</td><td>Es</td><td>99</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Fermium')">
+                <td>Fermium</td><td>Fm</td><td>100</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Mendelevium')">
+                <td>Mendelevium</td><td>Md</td><td>101</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Nobelium')">
+                <td>Nobelium</td><td>No</td><td>102</td>
+            </tr>
+            <tr onclick="openElementInfo('https://en.wikipedia.org/wiki/Lawrencium')">
+                <td>Lawrencium</td><td>Lr</td><td>103</td>
+            </tr>            
+        </tbody>
+    </table>
+
+</body>
+</html>
